@@ -1,0 +1,62 @@
+[
+  {
+    "id": "demo-oprit",
+    "category": "opritten",
+    "title": {
+      "nl": "Oprit in kasseien — Wetteren",
+      "fr": "Allée en pavés — Wetteren",
+      "en": "Cobblestone driveway — Wetteren"
+    },
+    "description": {
+      "nl": "Volledige heraanleg van een oprit in natuursteen kasseien met waterdoorlatende voegen.",
+      "fr": "Réaménagement complet d'une allée en pavés naturels avec joints perméables.",
+      "en": "Full renovation of a driveway in natural stone cobbles with permeable joints."
+    },
+    "date": "2024-03",
+    "featured": true,
+    "images": {
+      "before": ["before-1.jpg"],
+      "after": ["after-1.jpg", "after-2.jpg"]
+    }
+  },
+  {
+    "id": "demo-terras",
+    "category": "terrassen",
+    "title": {
+      "nl": "Terras in keramische tegels — Aalst",
+      "fr": "Terrasse en carrelage céramique — Alost",
+      "en": "Ceramic tile patio — Aalst"
+    },
+    "description": {
+      "nl": "Aanleg van een ruim terras in moderne keramische tegels met geïntegreerde verlichting.",
+      "fr": "Aménagement d'une grande terrasse en carrelage céramique moderne avec éclairage intégré.",
+      "en": "Installation of a spacious patio in modern ceramic tiles with integrated lighting."
+    },
+    "date": "2024-06",
+    "featured": true,
+    "images": {
+      "before": [],
+      "after": ["after-1.jpg", "after-2.jpg"]
+    }
+  },
+  {
+    "id": "demo-tuin",
+    "category": "tuinaanleg",
+    "title": {
+      "nl": "Volledige tuinaanleg — Nieuwerkerken",
+      "fr": "Aménagement de jardin complet — Nieuwerkerken",
+      "en": "Complete garden installation — Nieuwerkerken"
+    },
+    "description": {
+      "nl": "Nieuwe tuin met grasmatten, aanplantingen, en een pad in klinkers.",
+      "fr": "Nouveau jardin avec gazon en rouleaux, plantations et allée en clinkers.",
+      "en": "New garden with turf, plantings, and a clinker pathway."
+    },
+    "date": "2024-09",
+    "featured": true,
+    "images": {
+      "before": ["before-1.jpg", "before-2.jpg"],
+      "after": ["after-1.jpg", "after-2.jpg", "after-3.jpg"]
+    }
+  }
+]

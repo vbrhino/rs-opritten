@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.rsoprittenenterrassen.be/sitemap.xml

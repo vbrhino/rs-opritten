@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Jan D.",
+    "location": "Wetteren",
+    "service": {
+      "nl": "Aanleg oprit",
+      "fr": "Aménagement allée",
+      "en": "Driveway installation"
+    },
+    "text": {
+      "nl": "Top werk! Onze oprit ziet er prachtig uit en was klaar binnen de afgesproken termijn. Steven denkt mee en geeft eerlijk advies.",
+      "fr": "Excellent travail ! Notre allée est magnifique et a été terminée dans les délais convenus. Steven réfléchit avec vous et donne des conseils honnêtes.",
+      "en": "Great work! Our driveway looks beautiful and was finished within the agreed timeline. Steven thinks along and gives honest advice."
+    },
+    "rating": 5
+  },
+  {
+    "name": "Marie V.",
+    "location": "Aalst",
+    "service": {
+      "nl": "Terras aanleggen",
+      "fr": "Aménagement terrasse",
+      "en": "Patio installation"
+    },
+    "text": {
+      "nl": "Heel tevreden over ons nieuw terras. Proper werk, alles netjes opgeruimd achteraf. Aanrader!",
+      "fr": "Très satisfaite de notre nouvelle terrasse. Travail soigné, tout bien rangé après. Je recommande !",
+      "en": "Very happy with our new patio. Clean work, everything tidied up afterwards. Recommended!"
+    },
+    "rating": 5
+  },
+  {
+    "name": "Koen S.",
+    "location": "Nieuwerkerken",
+    "service": {
+      "nl": "Volledige tuinaanleg",
+      "fr": "Aménagement de jardin complet",
+      "en": "Complete garden installation"
+    },
+    "text": {
+      "nl": "Van kale vlakte naar droomtuin. Steven heeft alles van A tot Z gedaan: grondwerk, aanplantingen, klinkers en afsluiting. Vakmanschap.",
+      "fr": "D'un terrain vide à un jardin de rêve. Steven a tout fait de A à Z : terrassement, plantations, clinkers et clôture. Un vrai artisan.",
+      "en": "From bare ground to dream garden. Steven did everything from A to Z: groundwork, plantings, clinkers and fencing. True craftsmanship."
+    },
+    "rating": 5
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "RS Opritten & Terrassen — Opritten, terrassen en tuinaanleg",
+    "description": "Al meer dan 20 jaar uw partner voor opritten, terrassen en tuinaanleg. Verharding én groenwerk — alles in één hand. Vraag een vrijblijvende offerte aan."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "Over ons",
+    "services": "Diensten",
+    "gallery": "Realisaties",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Uw partner voor opritten, terrassen en tuinen",
+    "subtitle": "Al meer dan 20 jaar vakmanschap — verharding én groenwerk in één hand.",
+    "cta": "Vraag vrijblijvende offerte aan"
+  },
+  "about": {
+    "title": "Over ons",
+    "text": "Met meer dan 20 jaar ervaring staat RS Opritten & Terrassen garant voor kwaliteitsvol werk. Van opritten en terrassen tot volledige tuinaanleg en onderhoud — alles gebeurt in eigen beheer. Geen onderaannemers, geen omwegen. U spreekt rechtstreeks met de vakman die het werk uitvoert.",
+    "usp1_title": "20+ jaar ervaring",
+    "usp1_text": "Ruim twee decennia vakkennis in verhardingen en groenwerk.",
+    "usp2_title": "Alles in één hand",
+    "usp2_text": "Zowel de verharding als het groenwerk — u heeft maar één aanspreekpunt.",
+    "usp3_title": "Eigen beheer",
+    "usp3_text": "Alles wordt persoonlijk uitgevoerd. Geen onderaannemers, geen verrassingen."
+  },
+  "services": {
+    "title": "Onze diensten",
+    "subtitle": "Van verhardingswerken tot tuinonderhoud — wij zorgen voor de volledige afwerking.",
+    "cta": "Offerte aanvragen",
+    "cat_opritten": "Verhardingswerken",
+    "cat_opritten_items": "Aanleg oprit • Aanleg parking • Aanleg terras • Wandelpaden • Klinkerwerken • Betonnen platen • Heraanleg verharding • Vloerwerken • Chape • Tegels plaatsen",
+    "cat_tuinaanleg": "Tuinaanleg",
+    "cat_tuinaanleg_items": "Nieuwe tuin • Tuinrenovatie • Aanplantingen • Grasmatten • Boomschors • Drainage • Klinkerwerken in tuin • Terras in tuin",
+    "cat_afsluitingen": "Afsluitingen & schermen",
+    "cat_afsluitingen_items": "Tuinafsluiting • Draadafsluiting • Draadpanelen • Houten schermen • Steenkorven",
+    "cat_onderhoud": "Tuinonderhoud",
+    "cat_onderhoud_items": "Algemeen onderhoud • Gras maaien • Bemesten • Ontmossen • Hagen scheren • Onkruid wieden • Snoeiwerken • Oprit/terras reinigen"
+  },
+  "gallery": {
+    "title": "Onze realisaties",
+    "subtitle": "Bekijk een selectie van onze projecten.",
+    "filter_all": "Alles",
+    "filter_opritten": "Opritten",
+    "filter_terrassen": "Terrassen",
+    "filter_tuinaanleg": "Tuinaanleg",
+    "filter_onderhoud": "Onderhoud",
+    "filter_afsluitingen": "Afsluitingen",
+    "before": "Voor",
+    "after": "Na"
+  },
+  "reviews": {
+    "title": "Wat klanten zeggen",
+    "subtitle": "Eerlijke feedback van tevreden klanten."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Neem gerust contact op voor een vrijblijvende offerte of meer informatie.",
+    "form_name": "Naam",
+    "form_email": "E-mail",
+    "form_phone": "Telefoonnummer",
+    "form_service": "Type werk",
+    "form_service_options": ["Oprit", "Terras", "Tuinaanleg", "Tuinonderhoud", "Afsluiting/scherm", "Andere"],
+    "form_message": "Bericht of extra info",
+    "form_submit": "Verstuur aanvraag",
+    "form_success": "Bedankt! We nemen zo snel mogelijk contact met u op.",
+    "form_error": "Er ging iets mis. Probeer opnieuw of neem telefonisch contact op.",
+    "address_label": "Regio",
+    "address_value": "Nieuwerkerken",
+    "phone_label": "Telefoon",
+    "email_label": "E-mail",
+    "whatsapp_label": "WhatsApp",
+    "or_call": "Of bel direct"
+  },
+  "footer": {
+    "rights": "Alle rechten voorbehouden.",
+    "privacy": "Privacybeleid",
+    "cookies": "Cookiebeleid",
+    "vat": "BTW"
+  },
+  "cookie": {
+    "text": "Deze website gebruikt enkel noodzakelijke cookies voor het correct functioneren van het contactformulier.",
+    "accept": "Begrepen"
+  }
+}

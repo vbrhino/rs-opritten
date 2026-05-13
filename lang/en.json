@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "RS Opritten & Terrassen — Driveways, patios and garden design",
+    "description": "Your partner for driveways, patios and garden design for over 20 years. Paving and green spaces — all in one hand. Request a free quote."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "gallery": "Portfolio",
+    "reviews": "Reviews",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Your partner for driveways, patios and gardens",
+    "subtitle": "Over 20 years of craftsmanship — paving and green spaces in one hand.",
+    "cta": "Request a free quote"
+  },
+  "about": {
+    "title": "About us",
+    "text": "With over 20 years of experience, RS Opritten & Terrassen guarantees quality work. From driveways and patios to complete garden installation and maintenance — everything is handled in-house. No subcontractors, no detours. You speak directly with the craftsman who does the work.",
+    "usp1_title": "20+ years experience",
+    "usp1_text": "Over two decades of expertise in paving and green spaces.",
+    "usp2_title": "All in one hand",
+    "usp2_text": "Both paving and green work — you only need one point of contact.",
+    "usp3_title": "In-house management",
+    "usp3_text": "Everything is personally executed. No subcontractors, no surprises."
+  },
+  "services": {
+    "title": "Our services",
+    "subtitle": "From paving works to garden maintenance — we provide the complete finish.",
+    "cta": "Request a quote",
+    "cat_opritten": "Paving works",
+    "cat_opritten_items": "Driveway • Parking • Patio • Pathways • Clinkers • Concrete slabs • Paving renovation • Flooring • Screed • Tiling",
+    "cat_tuinaanleg": "Garden design",
+    "cat_tuinaanleg_items": "New garden • Garden renovation • Plantings • Turf • Bark mulch • Drainage • Garden clinkers • Garden patio",
+    "cat_afsluitingen": "Fences & screens",
+    "cat_afsluitingen_items": "Garden fence • Wire fence • Wire panels • Wooden screens • Gabions",
+    "cat_onderhoud": "Garden maintenance",
+    "cat_onderhoud_items": "General maintenance • Mowing • Fertilizing • Moss removal • Hedge trimming • Weeding • Pruning • Driveway/patio cleaning"
+  },
+  "gallery": {
+    "title": "Our projects",
+    "subtitle": "Browse a selection of our completed work.",
+    "filter_all": "All",
+    "filter_opritten": "Driveways",
+    "filter_terrassen": "Patios",
+    "filter_tuinaanleg": "Gardens",
+    "filter_onderhoud": "Maintenance",
+    "filter_afsluitingen": "Fences",
+    "before": "Before",
+    "after": "After"
+  },
+  "reviews": {
+    "title": "What clients say",
+    "subtitle": "Honest feedback from satisfied customers."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Feel free to contact us for a free quote or more information.",
+    "form_name": "Name",
+    "form_email": "Email",
+    "form_phone": "Phone number",
+    "form_service": "Type of work",
+    "form_service_options": ["Driveway", "Patio", "Garden design", "Garden maintenance", "Fence/screen", "Other"],
+    "form_message": "Message or additional info",
+    "form_submit": "Send request",
+    "form_success": "Thank you! We'll get back to you as soon as possible.",
+    "form_error": "Something went wrong. Try again or give us a call.",
+    "address_label": "Region",
+    "address_value": "Nieuwerkerken",
+    "phone_label": "Phone",
+    "email_label": "Email",
+    "whatsapp_label": "WhatsApp",
+    "or_call": "Or call directly"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy policy",
+    "cookies": "Cookie policy",
+    "vat": "VAT"
+  },
+  "cookie": {
+    "text": "This website only uses necessary cookies for the contact form to function properly.",
+    "accept": "Got it"
+  }
+}

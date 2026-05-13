@@ -1,0 +1,87 @@
+{
+  "meta": {
+    "title": "RS Opritten & Terrassen — Allées, terrasses et aménagement de jardins",
+    "description": "Depuis plus de 20 ans votre partenaire pour allées, terrasses et aménagement de jardins. Pavage et espaces verts — tout en une seule main. Demandez un devis gratuit."
+  },
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "services": "Services",
+    "gallery": "Réalisations",
+    "reviews": "Avis",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Votre partenaire pour allées, terrasses et jardins",
+    "subtitle": "Plus de 20 ans de savoir-faire — pavage et espaces verts en une seule main.",
+    "cta": "Demandez un devis gratuit"
+  },
+  "about": {
+    "title": "À propos",
+    "text": "Avec plus de 20 ans d'expérience, RS Opritten & Terrassen garantit un travail de qualité. Des allées et terrasses à l'aménagement complet de jardins et l'entretien — tout est réalisé en gestion propre. Pas de sous-traitants, pas de détours. Vous parlez directement avec l'artisan qui effectue le travail.",
+    "usp1_title": "20+ ans d'expérience",
+    "usp1_text": "Plus de deux décennies d'expertise en pavage et espaces verts.",
+    "usp2_title": "Tout en une main",
+    "usp2_text": "Aussi bien le pavage que les espaces verts — un seul interlocuteur.",
+    "usp3_title": "Gestion propre",
+    "usp3_text": "Tout est exécuté personnellement. Pas de sous-traitants, pas de surprises."
+  },
+  "services": {
+    "title": "Nos services",
+    "subtitle": "Des travaux de pavage à l'entretien de jardins — nous assurons la finition complète.",
+    "cta": "Demander un devis",
+    "cat_opritten": "Travaux de pavage",
+    "cat_opritten_items": "Allée • Parking • Terrasse • Sentiers • Clinkers • Dalles béton • Rénovation pavage • Sols • Chape • Carrelage",
+    "cat_tuinaanleg": "Aménagement de jardins",
+    "cat_tuinaanleg_items": "Nouveau jardin • Rénovation • Plantations • Gazon en rouleaux • Écorce • Drainage • Clinkers jardin • Terrasse jardin",
+    "cat_afsluitingen": "Clôtures & écrans",
+    "cat_afsluitingen_items": "Clôture de jardin • Clôture à fils • Panneaux • Écrans en bois • Gabions",
+    "cat_onderhoud": "Entretien de jardins",
+    "cat_onderhoud_items": "Entretien général • Tonte • Fertilisation • Démoussage • Taille de haies • Désherbage • Élagage • Nettoyage allée/terrasse"
+  },
+  "gallery": {
+    "title": "Nos réalisations",
+    "subtitle": "Découvrez une sélection de nos projets.",
+    "filter_all": "Tout",
+    "filter_opritten": "Allées",
+    "filter_terrassen": "Terrasses",
+    "filter_tuinaanleg": "Jardins",
+    "filter_onderhoud": "Entretien",
+    "filter_afsluitingen": "Clôtures",
+    "before": "Avant",
+    "after": "Après"
+  },
+  "reviews": {
+    "title": "Ce que disent nos clients",
+    "subtitle": "Des retours honnêtes de clients satisfaits."
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "N'hésitez pas à nous contacter pour un devis gratuit ou plus d'informations.",
+    "form_name": "Nom",
+    "form_email": "E-mail",
+    "form_phone": "Téléphone",
+    "form_service": "Type de travaux",
+    "form_service_options": ["Allée", "Terrasse", "Aménagement jardin", "Entretien jardin", "Clôture/écran", "Autre"],
+    "form_message": "Message ou info supplémentaire",
+    "form_submit": "Envoyer la demande",
+    "form_success": "Merci ! Nous vous recontacterons dès que possible.",
+    "form_error": "Une erreur s'est produite. Réessayez ou appelez-nous.",
+    "address_label": "Région",
+    "address_value": "Nieuwerkerken",
+    "phone_label": "Téléphone",
+    "email_label": "E-mail",
+    "whatsapp_label": "WhatsApp",
+    "or_call": "Ou appelez directement"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "privacy": "Politique de confidentialité",
+    "cookies": "Politique de cookies",
+    "vat": "TVA"
+  },
+  "cookie": {
+    "text": "Ce site utilise uniquement des cookies nécessaires au bon fonctionnement du formulaire de contact.",
+    "accept": "Compris"
+  }
+}
