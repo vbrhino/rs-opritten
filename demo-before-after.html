@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo — Before/After Side-by-Side</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      padding: 2rem;
+      color: #333;
+    }
+    h1 { margin-bottom: 0.5rem; }
+    p.intro { margin-bottom: 2rem; color: #666; }
+
+    /* === Project Card === */
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      margin-bottom: 2rem;
+    }
+    .project-card h2 {
+      padding: 1.25rem 1.5rem 0.25rem;
+      font-size: 1.2rem;
+    }
+    .project-card .description {
+      padding: 0 1.5rem 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    /* === Side-by-side pair === */
+    .compare-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px;
+      padding: 0 4px 4px;
+    }
+    .compare-side {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+    .compare-side img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .compare-label {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .compare-label.after {
+      background: rgba(46, 125, 50, 0.85);
+    }
+
+    /* === After-only grid (geen before beschikbaar) === */
+    .after-only-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 4px;
+      padding: 0 4px 4px;
+    }
+    .after-only-grid .compare-side img {
+      height: 180px;
+    }
+
+    /* === Meerdere paren in 1 project === */
+    .pairs-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 0 4px 4px;
+    }
+
+    /* === Mobile === */
+    @media (max-width: 600px) {
+      body { padding: 1rem; }
+      .compare-pair {
+        grid-template-columns: 1fr 1fr;
+        gap: 3px;
+      }
+      .compare-side img {
+        height: 140px;
+      }
+      .after-only-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* === Variant B: gestapeld op mobile === */
+    @media (max-width: 420px) {
+      .compare-pair.stack-mobile {
+        grid-template-columns: 1fr;
+      }
+      .compare-pair.stack-mobile .compare-side img {
+        height: 180px;
+      }
+    }
+
+    hr { border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0; }
+    .variant-label {
+      font-size: 0.85rem;
+      color: #999;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Before / After — Side-by-Side Demo</h1>
+  <p class="intro">Drie varianten om te bekijken. Open dit bestand lokaal in je browser.</p>
+
+  <!-- ============================== -->
+  <p class="variant-label">Variant A — Enkel paar (before + after)</p>
+  <!-- ============================== -->
+  <div class="project-card">
+    <h2>Oprit Nieuwerkerken</h2>
+    <p class="description">Volledige heraanleg oprit in betontegels</p>
+    <div class="compare-pair">
+      <div class="compare-side">
+        <span class="compare-label">Voor</span>
+        <img src="img/projects/demo-oprit/before-1.jpg" alt="Voor">
+      </div>
+      <div class="compare-side">
+        <span class="compare-label after">Na</span>
+        <img src="img/projects/demo-oprit/after-1.jpg" alt="Na">
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ============================== -->
+  <p class="variant-label">Variant B — Meerdere paren in 1 project</p>
+  <!-- ============================== -->
+  <div class="project-card">
+    <h2>Tuinrenovatie Sint-Truiden</h2>
+    <p class="description">Compleet nieuwe aanplanting + terras</p>
+    <div class="pairs-grid">
+      <div class="compare-pair">
+        <div class="compare-side">
+          <span class="compare-label">Voor</span>
+          <img src="img/projects/demo-tuin/before-1.jpg" alt="Voor">
+        </div>
+        <div class="compare-side">
+          <span class="compare-label after">Na</span>
+          <img src="img/projects/demo-tuin/after-1.jpg" alt="Na">
+        </div>
+      </div>
+      <div class="compare-pair">
+        <div class="compare-side">
+          <span class="compare-label">Voor</span>
+          <img src="img/projects/demo-tuin/before-2.jpg" alt="Voor">
+        </div>
+        <div class="compare-side">
+          <span class="compare-label after">Na</span>
+          <img src="img/projects/demo-tuin/after-2.jpg" alt="Na">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ============================== -->
+  <p class="variant-label">Variant C — Enkel "na" foto's (geen before beschikbaar)</p>
+  <!-- ============================== -->
+  <div class="project-card">
+    <h2>Terras Hasselt</h2>
+    <p class="description">Keramische tegels op plot — 45m²</p>
+    <div class="after-only-grid">
+      <div class="compare-side">
+        <img src="img/projects/demo-terras/after-1.jpg" alt="Resultaat">
+      </div>
+      <div class="compare-side">
+        <img src="img/projects/demo-terras/after-2.jpg" alt="Resultaat">
+      </div>
+      <div class="compare-side">
+        <img src="img/projects/demo-terras/after-3.jpg" alt="Resultaat">
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- ============================== -->
+  <p class="variant-label">Variant D — Side-by-side maar gestapeld op kleine schermen</p>
+  <!-- ============================== -->
+  <div class="project-card">
+    <h2>Oprit + Parking</h2>
+    <p class="description">Klinkers in visgraatmotief</p>
+    <div class="compare-pair stack-mobile">
+      <div class="compare-side">
+        <span class="compare-label">Voor</span>
+        <img src="img/projects/demo-oprit/before-1.jpg" alt="Voor">
+      </div>
+      <div class="compare-side">
+        <span class="compare-label after">Na</span>
+        <img src="img/projects/demo-oprit/after-1.jpg" alt="Na">
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

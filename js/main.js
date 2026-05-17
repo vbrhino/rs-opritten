@@ -186,99 +186,91 @@
       return project.images.before.length > 0 || project.images.after.length > 0;
     }).map(project => {
       const title = project.title[currentLang] || project.title.nl;
+      const desc = project.description[currentLang] || project.description.nl;
       const hasBefore = project.images.before.length > 0;
       const hasAfter = project.images.after.length > 0;
-      const thumbSrc = hasAfter
-        ? `img/projects/${project.id}/${project.images.after[0]}`
-        : `img/projects/${project.id}/${project.images.before[0]}`;
+      const beforeLabel = t.before || 'Voor';
+      const afterLabel = t.after || 'Na';
 
-      let badges = '';
-      if (hasBefore) badges += `<span class="badge badge-before">${t.before || 'Voor'} + ${t.after || 'Na'}</span>`;
-      else if (hasAfter) badges += `<span class="badge badge-after">${t.after || 'Na'}</span>`;
+      let imagesHtml = '';
+
+      if (hasBefore && hasAfter) {
+        // Side-by-side pairs: pair them by index
+        const maxPairs = Math.max(project.images.before.length, project.images.after.length);
+        let pairsHtml = '';
+        for (let i = 0; i < maxPairs; i++) {
+          const beforeImg = project.images.before[i];
+          const afterImg = project.images.after[i];
+          if (beforeImg && afterImg) {
+            pairsHtml += `
+              <div class="compare-pair">
+                <div class="compare-side" data-src="img/projects/${project.id}/${beforeImg}">
+                  <span class="compare-label">${beforeLabel}</span>
+                  <img src="img/projects/${project.id}/${beforeImg}" alt="${beforeLabel}" loading="lazy">
+                </div>
+                <div class="compare-side" data-src="img/projects/${project.id}/${afterImg}">
+                  <span class="compare-label label-after">${afterLabel}</span>
+                  <img src="img/projects/${project.id}/${afterImg}" alt="${afterLabel}" loading="lazy">
+                </div>
+              </div>`;
+          } else if (afterImg) {
+            pairsHtml += `
+              <div class="compare-pair">
+                <div class="compare-side" style="grid-column: span 2" data-src="img/projects/${project.id}/${afterImg}">
+                  <span class="compare-label label-after">${afterLabel}</span>
+                  <img src="img/projects/${project.id}/${afterImg}" alt="${afterLabel}" loading="lazy">
+                </div>
+              </div>`;
+          } else if (beforeImg) {
+            pairsHtml += `
+              <div class="compare-pair">
+                <div class="compare-side" style="grid-column: span 2" data-src="img/projects/${project.id}/${beforeImg}">
+                  <span class="compare-label">${beforeLabel}</span>
+                  <img src="img/projects/${project.id}/${beforeImg}" alt="${beforeLabel}" loading="lazy">
+                </div>
+              </div>`;
+          }
+        }
+        imagesHtml = `<div class="compare-pairs">${pairsHtml}</div>`;
+      } else {
+        // After-only or before-only grid
+        const imgs = hasAfter ? project.images.after : project.images.before;
+        const label = hasAfter ? afterLabel : beforeLabel;
+        const labelClass = hasAfter ? 'label-after' : '';
+        imagesHtml = `<div class="after-only-grid">${imgs.map(img => `
+          <div class="compare-side" data-src="img/projects/${project.id}/${img}">
+            <img src="img/projects/${project.id}/${img}" alt="${label}" loading="lazy">
+          </div>`).join('')}</div>`;
+      }
 
       return `
-        <div class="gallery-card" data-project-id="${project.id}">
-          <div class="gallery-card-image">
-            <img src="${thumbSrc}" alt="${title}" loading="lazy"
-                 onerror="this.style.display='none'">
-            <div class="gallery-card-badge">${badges}</div>
-          </div>
-          <div class="gallery-card-info">
+        <div class="gallery-card">
+          <div class="project-detail-header">
             <h3>${title}</h3>
-            <p>${project.description[currentLang] || project.description.nl}</p>
+            <p>${desc}</p>
           </div>
+          ${imagesHtml}
         </div>
       `;
     }).join('');
 
-    // Click handler for lightbox
-    container.querySelectorAll('.gallery-card').forEach(card => {
-      card.addEventListener('click', () => {
-        const projectId = card.dataset.projectId;
-        openProjectLightbox(projectId);
+    // Click handler for lightbox on individual images
+    container.querySelectorAll('.compare-side[data-src]').forEach(side => {
+      side.addEventListener('click', () => {
+        const card = side.closest('.gallery-card');
+        const allSides = card.querySelectorAll('.compare-side[data-src]');
+        lightboxImages = Array.from(allSides).map(s => ({
+          type: 'image',
+          src: s.dataset.src,
+          caption: ''
+        }));
+        lightboxIndex = Array.from(allSides).indexOf(side);
+        showLightbox();
       });
     });
   }
 
   // --- Lightbox ---
-  function openProjectLightbox(projectId) {
-    const project = projects.find(p => p.id === projectId);
-    if (!project) return;
-
-    const t = translations.gallery || {};
-    const title = project.title[currentLang] || project.title.nl;
-    const hasBefore = project.images.before.length > 0;
-    const hasAfter = project.images.after.length > 0;
-
-    // Build image list for navigation
-    lightboxImages = [];
-    if (hasBefore && hasAfter) {
-      // First item is a before-after comparison (uses first before + first after)
-      lightboxImages.push({
-        type: 'comparison',
-        before: `img/projects/${project.id}/${project.images.before[0]}`,
-        after: `img/projects/${project.id}/${project.images.after[0]}`,
-        caption: `${title} — ${t.before || 'Voor'} / ${t.after || 'Na'}`
-      });
-      // Remaining after images (skip first, already in comparison)
-      project.images.after.slice(1).forEach((img, i) => {
-        lightboxImages.push({
-          type: 'image',
-          src: `img/projects/${project.id}/${img}`,
-          caption: `${title} — ${t.after || 'Na'} (${i + 2}/${project.images.after.length})`
-        });
-      });
-      // Remaining before images (skip first, already in comparison)
-      project.images.before.slice(1).forEach((img, i) => {
-        lightboxImages.push({
-          type: 'image',
-          src: `img/projects/${project.id}/${img}`,
-          caption: `${title} — ${t.before || 'Voor'} (${i + 2}/${project.images.before.length})`
-        });
-      });
-    } else {
-      // Only after or only before — show all as individual images
-      project.images.after.forEach((img, i) => {
-        lightboxImages.push({
-          type: 'image',
-          src: `img/projects/${project.id}/${img}`,
-          caption: `${title} — ${t.after || 'Na'} (${i + 1}/${project.images.after.length})`
-        });
-      });
-      project.images.before.forEach((img, i) => {
-        lightboxImages.push({
-          type: 'image',
-          src: `img/projects/${project.id}/${img}`,
-          caption: `${title} — ${t.before || 'Voor'} (${i + 1}/${project.images.before.length})`
-        });
-      });
-    }
-
-    if (lightboxImages.length === 0) return;
-    lightboxIndex = 0;
-    showLightbox();
-  }
-
   function showLightbox() {
     const lightbox = document.getElementById('lightbox');
     const content = document.getElementById('lightbox-content');
@@ -287,34 +279,17 @@
     if (lightboxImages.length === 0) return;
 
     const item = lightboxImages[lightboxIndex];
-    if (item.type === 'comparison') {
-      content.innerHTML = `
-        <div class="comparison-container" id="comparison-active">
-          <img src="${item.before}" alt="Voor" class="comparison-before">
-          <img src="${item.after}" alt="Na" class="comparison-after">
-          <div class="comparison-slider"></div>
-          <div class="comparison-labels">
-            <span class="comparison-label comparison-label-before">${translations.gallery?.before || 'Voor'}</span>
-            <span class="comparison-label comparison-label-after">${translations.gallery?.after || 'Na'}</span>
-          </div>
-        </div>
-      `;
-      setTimeout(() => initComparisonSlider(document.getElementById('comparison-active')), 50);
-    } else {
-      content.innerHTML = `<img src="${item.src}" alt="${item.caption}">`;
-    }
-    caption.textContent = item.caption;
+    content.innerHTML = `<img src="${item.src}" alt="">`;
+    caption.textContent = item.caption || '';
 
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
 
-    // Nav visibility
     document.getElementById('lightbox-prev').style.display = lightboxImages.length > 1 ? '' : 'none';
     document.getElementById('lightbox-next').style.display = lightboxImages.length > 1 ? '' : 'none';
   }
 
   function closeLightbox() {
-    if (sliderCleanup) sliderCleanup();
     document.getElementById('lightbox').hidden = true;
     document.body.style.overflow = '';
   }
@@ -341,44 +316,6 @@
       showLightbox();
     }
   });
-
-  // --- Before/After Comparison Slider ---
-  let sliderCleanup = null;
-
-  function initComparisonSlider(container) {
-    if (!container) return;
-    // Clean up previous listeners
-    if (sliderCleanup) sliderCleanup();
-
-    const slider = container.querySelector('.comparison-slider');
-    const afterImg = container.querySelector('.comparison-after');
-    let isDragging = false;
-
-    function setPosition(x) {
-      const rect = container.getBoundingClientRect();
-      let percent = ((x - rect.left) / rect.width) * 100;
-      percent = Math.max(5, Math.min(95, percent));
-      slider.style.left = percent + '%';
-      afterImg.style.clipPath = `inset(0 0 0 ${percent}%)`;
-    }
-
-    const onMouseUp = () => isDragging = false;
-    const onTouchEnd = () => isDragging = false;
-
-    slider.addEventListener('mousedown', () => isDragging = true);
-    slider.addEventListener('touchstart', () => isDragging = true);
-    document.addEventListener('mouseup', onMouseUp);
-    document.addEventListener('touchend', onTouchEnd);
-    container.addEventListener('mousemove', e => { if (isDragging) setPosition(e.clientX); });
-    container.addEventListener('touchmove', e => { if (isDragging) setPosition(e.touches[0].clientX); });
-    container.addEventListener('click', e => setPosition(e.clientX));
-
-    sliderCleanup = () => {
-      document.removeEventListener('mouseup', onMouseUp);
-      document.removeEventListener('touchend', onTouchEnd);
-      sliderCleanup = null;
-    };
-  }
 
   // --- Reviews ---
   function renderReviews() {

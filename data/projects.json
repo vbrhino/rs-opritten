@@ -20,6 +20,26 @@
     }
   },
   {
+    "id": "demo-parking",
+    "category": "opritten",
+    "title": {
+      "nl": "Parking in klinkers — Hasselt",
+      "fr": "Parking en clinkers — Hasselt",
+      "en": "Clinker parking area — Hasselt"
+    },
+    "description": {
+      "nl": "Aanleg parking voor 3 wagens in betonklinkers met visgraatmotief.",
+      "fr": "Aménagement d'un parking pour 3 voitures en pavés béton motif chevron.",
+      "en": "Parking area for 3 cars in concrete clinkers with herringbone pattern."
+    },
+    "date": "2024-05",
+    "featured": false,
+    "images": {
+      "before": ["before-1.jpg", "before-2.jpg"],
+      "after": ["after-1.jpg", "after-2.jpg"]
+    }
+  },
+  {
     "id": "demo-terras",
     "category": "terrassen",
     "title": {
@@ -56,6 +76,46 @@
     "featured": true,
     "images": {
       "before": ["before-1.jpg", "before-2.jpg"],
+      "after": ["after-1.jpg", "after-2.jpg", "after-3.jpg"]
+    }
+  },
+  {
+    "id": "demo-afsluiting",
+    "category": "afsluitingen",
+    "title": {
+      "nl": "Houten scherm met steenkorven — Genk",
+      "fr": "Clôture bois avec gabions — Genk",
+      "en": "Wooden fence with gabions — Genk"
+    },
+    "description": {
+      "nl": "Plaatsing van houten tuinschermen gecombineerd met steenkorven als erfafsluiting.",
+      "fr": "Installation de panneaux de jardin en bois combinés avec des gabions comme clôture.",
+      "en": "Installation of wooden garden panels combined with gabion baskets as property fence."
+    },
+    "date": "2024-08",
+    "featured": false,
+    "images": {
+      "before": ["before-1.jpg"],
+      "after": ["after-1.jpg", "after-2.jpg"]
+    }
+  },
+  {
+    "id": "demo-onderhoud",
+    "category": "onderhoud",
+    "title": {
+      "nl": "Tuinonderhoud seizoenscontract — Sint-Truiden",
+      "fr": "Entretien jardin contrat saisonnier — Saint-Trond",
+      "en": "Garden maintenance seasonal contract — Sint-Truiden"
+    },
+    "description": {
+      "nl": "Volledig seizoensonderhoud: snoeien, maaien, onkruid en haagscheren.",
+      "fr": "Entretien saisonnier complet: taille, tonte, désherbage et haies.",
+      "en": "Full seasonal maintenance: pruning, mowing, weeding and hedge trimming."
+    },
+    "date": "2024-10",
+    "featured": false,
+    "images": {
+      "before": [],
       "after": ["after-1.jpg", "after-2.jpg", "after-3.jpg"]
     }
   }
