@@ -485,6 +485,13 @@ ul, ol { list-style: none; }
   height: 180px;
 }
 
+/* Gallery Load More */
+.gallery-load-more {
+  display: block;
+  margin: 32px auto 0;
+  min-width: 240px;
+}
+
 /* === Reviews === */
 .reviews-grid {
   display: grid;

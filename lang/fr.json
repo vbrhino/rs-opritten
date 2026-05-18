@@ -49,7 +49,8 @@
     "filter_onderhoud": "Entretien",
     "filter_afsluitingen": "Clôtures",
     "before": "Avant",
-    "after": "Après"
+    "after": "Après",
+    "load_more": "Afficher plus de projets"
   },
   "reviews": {
     "title": "Ce que disent nos clients",
@@ -62,7 +63,14 @@
     "form_email": "E-mail",
     "form_phone": "Téléphone",
     "form_service": "Type de travaux",
-    "form_service_options": ["Allée", "Terrasse", "Aménagement jardin", "Entretien jardin", "Clôture/écran", "Autre"],
+    "form_service_options": [
+      "Allée",
+      "Terrasse",
+      "Aménagement jardin",
+      "Entretien jardin",
+      "Clôture/écran",
+      "Autre"
+    ],
     "form_message": "Message ou info supplémentaire",
     "form_submit": "Envoyer la demande",
     "form_success": "Merci ! Nous vous recontacterons dès que possible.",

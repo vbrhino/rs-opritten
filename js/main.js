@@ -8,6 +8,7 @@
   let projects = [];
   let reviews = [];
   let currentFilter = 'all';
+  let galleryVisibleCount = 4;
   let lightboxImages = [];
   let lightboxIndex = 0;
 
@@ -165,6 +166,7 @@
     container.querySelectorAll('.gallery-filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         currentFilter = btn.dataset.filter;
+        galleryVisibleCount = 4;
         renderGallery();
       });
     });
@@ -173,18 +175,20 @@
   function renderGalleryCards() {
     const container = document.getElementById('gallery-grid');
     const t = translations.gallery || {};
-    const filtered = currentFilter === 'all'
+    const filtered = (currentFilter === 'all'
       ? projects
-      : projects.filter(p => p.category === currentFilter);
+      : projects.filter(p => p.category === currentFilter)
+    ).filter(project => project.images.before.length > 0 || project.images.after.length > 0);
 
     if (filtered.length === 0) {
       container.innerHTML = '<p style="text-align:center;color:var(--color-gray-600);">Geen projecten gevonden.</p>';
+      removeLoadMoreBtn();
       return;
     }
 
-    container.innerHTML = filtered.filter(project => {
-      return project.images.before.length > 0 || project.images.after.length > 0;
-    }).map(project => {
+    const visible = filtered.slice(0, galleryVisibleCount);
+
+    container.innerHTML = visible.map(project => {
       const title = project.title[currentLang] || project.title.nl;
       const desc = project.description[currentLang] || project.description.nl;
       const hasBefore = project.images.before.length > 0;
@@ -195,7 +199,6 @@
       let imagesHtml = '';
 
       if (hasBefore && hasAfter) {
-        // Side-by-side pairs: pair them by index
         const maxPairs = Math.max(project.images.before.length, project.images.after.length);
         let pairsHtml = '';
         for (let i = 0; i < maxPairs; i++) {
@@ -233,10 +236,8 @@
         }
         imagesHtml = `<div class="compare-pairs">${pairsHtml}</div>`;
       } else {
-        // After-only or before-only grid
         const imgs = hasAfter ? project.images.after : project.images.before;
         const label = hasAfter ? afterLabel : beforeLabel;
-        const labelClass = hasAfter ? 'label-after' : '';
         imagesHtml = `<div class="after-only-grid">${imgs.map(img => `
           <div class="compare-side" data-src="img/projects/${project.id}/${img}">
             <img src="img/projects/${project.id}/${img}" alt="${label}" loading="lazy">
@@ -254,6 +255,9 @@
       `;
     }).join('');
 
+    // Load more button
+    renderLoadMoreBtn(filtered.length);
+
     // Click handler for lightbox on individual images
     container.querySelectorAll('.compare-side[data-src]').forEach(side => {
       side.addEventListener('click', () => {
@@ -268,6 +272,32 @@
         showLightbox();
       });
     });
+  }
+
+  function renderLoadMoreBtn(totalCount) {
+    removeLoadMoreBtn();
+    if (galleryVisibleCount >= totalCount) return;
+
+    const remaining = totalCount - galleryVisibleCount;
+    const t = translations.gallery || {};
+    const label = (t.load_more || 'Meer projecten tonen') + ` (${remaining})`;
+
+    const btn = document.createElement('button');
+    btn.className = 'btn btn-outline btn-lg gallery-load-more';
+    btn.id = 'gallery-load-more';
+    btn.textContent = label;
+    btn.addEventListener('click', () => {
+      galleryVisibleCount += 4;
+      renderGalleryCards();
+    });
+
+    const container = document.getElementById('gallery-grid');
+    container.parentNode.insertBefore(btn, container.nextSibling);
+  }
+
+  function removeLoadMoreBtn() {
+    const existing = document.getElementById('gallery-load-more');
+    if (existing) existing.remove();
   }
 
   // --- Lightbox ---

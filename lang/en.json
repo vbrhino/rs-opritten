@@ -49,7 +49,8 @@
     "filter_onderhoud": "Maintenance",
     "filter_afsluitingen": "Fences",
     "before": "Before",
-    "after": "After"
+    "after": "After",
+    "load_more": "Show more projects"
   },
   "reviews": {
     "title": "What clients say",
@@ -62,7 +63,14 @@
     "form_email": "Email",
     "form_phone": "Phone number",
     "form_service": "Type of work",
-    "form_service_options": ["Driveway", "Patio", "Garden design", "Garden maintenance", "Fence/screen", "Other"],
+    "form_service_options": [
+      "Driveway",
+      "Patio",
+      "Garden design",
+      "Garden maintenance",
+      "Fence/screen",
+      "Other"
+    ],
     "form_message": "Message or additional info",
     "form_submit": "Send request",
     "form_success": "Thank you! We'll get back to you as soon as possible.",
