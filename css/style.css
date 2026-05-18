@@ -226,7 +226,7 @@ ul, ol { list-style: none; }
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 50%, #388e3c 100%);
-  background-image: url('../img/hero/hero-bg.jpg');
+  background-image: url('../img/hero/hero-bg.webp'), url('../img/hero/hero-bg.jpg');
   background-size: cover;
   background-position: center;
   margin-top: var(--header-height);
